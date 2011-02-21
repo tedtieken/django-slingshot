@@ -1,0 +1,59 @@
+div#news-slider {
+	height: 310px;
+	background-color: #000; 
+    margin-bottom: 10px; }
+    
+/* margin for both windows */
+div#news-slider > div > img, div#news-slider > div > div { margin: 10px; }
+
+/* RIGHT DIV */
+/* divide height into two, one large for text, one for bottom links */
+div#main-text { height: 260px; }
+div#more-link { height: 20px; }
+
+/* align more link to the right */
+div#more-link div.span-4.last p { text-align: right; }
+
+/* move the More link a bit to the right */
+div#more-link div.span-4.last {
+	position: relative;
+	left: 15px; }	
+    
+/* article title */
+div#slide-desc div#main-text h2 { 
+	color: #fff; 
+	margin: 10px 0px 0px; 
+    font-family: Georgia, Verdana, Tahoma, "Lucida Console", serif; }
+
+/* article preview text */
+div#slide-desc div#main-text p { 
+	margin: 10px 0px;
+	color: #eee; 
+    font-family: Verdana, Tahoma, "Lucida Console", Georgia, serif; }
+
+/* color for the middot */
+div#more-link div.span-3 p span.middot { color: #888; }
+
+/* POSTS */
+img.post-thumb {
+    border: 1px solid #eee;
+    padding: 8px; }
+div.post {
+    border-bottom: 1px dashed #999;
+    margin-bottom: 15px;
+    height: 170px; 
+    overflow: hidden; }    
+p.post-title { 
+    margin: 0px 0px 5px; 
+    font-size: 1.3em; 
+    padding-left: 10px; 
+    font-family: Georgia, Verdana, Tahoma, "Lucida Console", Georgia, serif; }
+p.post-title a {
+	font-weight: bold;
+	color: #000; }
+p.post-title a:hover {
+	color: #09f; }
+p.preview-text { 
+    font-family: Verdana, Tahoma, "Lucida Console", Georgia, serif;
+    font-size: 1.0em; 
+    padding-left: 10px; }

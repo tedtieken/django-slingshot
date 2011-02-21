@@ -1,0 +1,19 @@
+
+
+Add ability to get meta
+ - check meta for scaffold:
+   = scaffold:noscaffold
+   = scaffold:contenttype
+     / view
+     / view list
+     / edit
+     / delete
+   = scaffold:profiletype
+     / profile = own
+     / profile/edit = edit own
+     / profile/id = view
+     / profile/list/ = list
+
+Add ability to get related
+add ability to follow related (create list of children on object page)
+     

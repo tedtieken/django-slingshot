@@ -1,0 +1,42 @@
+h1 {
+    color: #000;
+    font-family: Georgia, sans-serif; 
+    margin: 10px 0px 5px;}
+p.post-meta {
+    color: #888;
+    margin: 0px 0px 20px;
+    font-family: Georgia, sans-serif; }
+p.post-content {
+    font-family: Verdana, Tahoma, "Lucida Console", Georgia, serif;
+    font-size: 1.2em; 
+    margin: 10px 20px 20px 0px;}
+p.post-image-caption {
+    text-align: center;
+    margin-right: 30px; 
+    border: 1px solid #ddd; 
+    background-color: #ffc;
+    padding: 3px;
+    font-family: Verdana, Tahoma, "Lucida Console", Georgia, serif; }
+img.post-image {
+    max-width: 600px;
+    margin: 0px; }
+    
+/* COMMENTS */
+p.commenter { font-weight: bold; }
+p.comment-text { 
+    font-family: Georgia, sans-serif; 
+    color: #666; }
+
+/* COMMENT FORM */
+/* Remove Blueprint's default zebra-strips of tables */
+tbody tr:nth-child(even) td, tbody tr.even td { background: #fff; }
+input[type=text], textarea {
+    padding: 5px 3px; 
+    background-color: #ffc; }
+label {
+    display: block;
+    text-align: right; 
+    font-size: 1.2em; 
+    font-weight: normal; }
+span#add-comments {
+    font-size: 1.6em; }

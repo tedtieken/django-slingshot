@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block css.extra %}
+<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}css/base_right.css" />
+{% endblock css.extra %}
+
+{% block canvas %}
+<!-- PAGE-SPECIFIC CONTENTS -->
+<div class="span-16">
+    {% block content %}&nbsp;{% endblock content %}
+</div>
+
+<!-- CORE + RIGHT COLUMN -->
+<div class="span-8 last">    
+    <!-- SEARCH BOX + AD -->
+    <div id="search-ad" class="span-8 last">
+        <div>
+            <form>
+                <input id="search-box" type="text" />
+                <input id="search-button" type="submit" value="Search" />
+            </form>
+        </div>
+        <img src="{{ MEDIA_URL }}images/ad_300x250.png">
+    </div>
+    
+    <!-- CATEGORIES -->
+    <div class="span-4">
+        <p class="column-title"><a href="#">Categories</a></p>
+        <ul>
+            <li><a href="#">Culture (12)</a></li>
+            <li><a href="#">Finance (11)</a></li>
+            <li><a href="#">Lifestyle (14)</a></li>
+            <li><a href="#">News (16)</a></li>
+            <li><a href="#">Sports (8)</a></li>
+            <li><a href="#">Travel (10)</a></li>
+            <li><a href="#">Health (17)</a></li>
+        </ul>
+    </div>				
+    
+    <!-- ARCHIVE -->
+    <div class="span-4 last">
+        <p class="column-title"><a href="#">Archive</a></p>
+        <ul>
+            <li><a href="#">October (4)</a></li>
+            <li><a href="#">September (6)</a></li>
+            <li><a href="#">August (3)</a></li>
+            <li><a href="#">July (8)</a></li>
+            <li><a href="#">June (1)</a></li>
+            <li><a href="#">May (4)</a></li>
+            <li><a href="#">April (1)</a></li>
+            <li><a href="#">March (2)</a></li>
+            <li><a href="#">February (8)</a></li>
+            <li><a href="#">January (9)</a></li>
+        </ul>
+    </div>    
+    
+    <!-- VIDEO -->
+    <div class="span-8 last">
+        <p class="column-title">Video</p>
+        <object width="310" height="257"><param name="movie" value="http://www.youtube.com/v/i6Fr65PFqfk?fs=1&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/i6Fr65PFqfk?fs=1&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="300" height="250"></embed></object>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="span-8 last">
+        <p class="column-title">Video</p>
+        <img src="{{ MEDIA_URL }}images/video.png" />
+    </div>
+
+    
+    <!-- SPONSORS -->
+    <div class="span-8 sponsors">
+        <p class="column-title">Sponsors</p>
+        <a href="#"><img src="{{ MEDIA_URL }}images/sponsor.png" /></a>
+        <a href="#"><img src="{{ MEDIA_URL }}images/sponsor.png" /></a>
+        <a href="#"><img src="{{ MEDIA_URL }}images/sponsor.png" /></a>
+        <a href="#"><img src="{{ MEDIA_URL }}images/sponsor.png" /></a>
+        <a href="#"><img src="{{ MEDIA_URL }}images/sponsor.png" /></a>
+        <a href="#"><img src="{{ MEDIA_URL }}images/sponsor.png" /></a>					
+    </div>
+    
+    {% block side.extra %}{% endblock side.extra %}
+    
+</div>
+{% endblock canvas %}

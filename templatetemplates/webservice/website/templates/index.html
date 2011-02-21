@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Home
+{% endblock %}
+
+{% block contents %}
+			<div id="fold" class="span-24 last">
+				<div class="span-8">
+					<div id="main-pic">
+						<p>High-Res Logo</p>
+					</div>
+
+				</div>
+				<div id="fold-right" class="span-16 last">
+					<h1>Website Title</h1>
+					<p>Put here what the website or service can do for the user, in as few text as possible. Preferably 2-3 sentences. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ip sum magna, dictum ac auctor non, pulvinar eget risus. Quisque elementum vehicula velit, at lobortis erat ullamcorper ut. Cras congue cursus tincidunt.</p>
+					
+					<div id="call-to-action">
+						<button id="button-1">Sign Up<br><span>See our plans and pricing</span></button>
+						<button id="button-2">View all Features<br><span>See why we rock!</span></button>
+
+					</div>
+				</div>
+			</div>
+	
+	<!-- TOP FEATURES -->
+	<div id="top-features" class="feature-pic span-16 colborder">
+		<h3>Top Features</h3>
+		
+		<div>
+			<div class="span-4">
+				<img src="{{ MEDIA_URL }}/images/top-feature-pic.png" />
+			</div>
+			
+			<div class="span-12 last">
+				<h4>All-Flash Storage. Instant-on gratification.</h4>
+				
+				<p>
+					If you have an iPod, iPhone, or iPad, you're already taking advantage of all that flash storage has to offer: 
+					reliability, speed, and efficiency. So the decision to use flash storage in an ultracompact notebook like MacBook 
+					Air makes perfect sense.
+				</p>
+			</div>					
+		</div>		
+		
+		<div>
+			<div class="span-4">
+				<img src="{{ MEDIA_URL }}/images/top-feature-pic.png" />
+			</div>
+			<div class="span-12 last">
+				<h4>Multi-Touch Trackpad. It's love at first click, tap, and scroll.</h4>
+				
+				<p>
+					The new MacBook Air includes a spacious Multi-Touch trackpad with a buttonless design, so you can click 
+					anywhere. The Multi-Touch trackpad also lets you pinch, swipe, or rotate to adjust an image, zoom in on text, 
+					or advance through a photo album.
+				</p>
+			</div>
+		</div>
+		
+		<div>
+			<div class="span-4">
+				<img src="{{ MEDIA_URL }}/images/top-feature-pic.png" />
+			</div>
+			<div class="span-12 last">
+				<h4>Long-Lasting Battery. Instant on. Even after a month off.</h4>
+				
+				<p>
+					Since space-saving flash storage leaves room for a bigger battery, you can devote more time to the things 
+					you enjoy most. Things like browsing the web, editing photos, and watching videos. Get up to 5 hours of battery 
+					life on a single charge on the 11-inch model and up to 7 hours on the 13-inch model. Put MacBook Air to sleep, 
+					and it enters standby mode to conserve battery life for up to 30 days.1 When you come back to your MacBook Air 
+					and open it up, it's on in an instant. So you're free to go off the grid knowing you're still on a charge.
+				</p>
+			</div>
+		</div>
+		
+		<div>
+			<div class="span-4">
+				<img src="{{ MEDIA_URL }}/images/top-feature-pic.png" />
+			</div>
+			<div class="span-12 last">
+				<h4>Stereo Speakers. Heard but not seen.</h4>
+				
+				<p>
+					Despite its compact form, MacBook Air delivers full stereo sound. Space-efficient design inside the enclosure 
+					allows for the placement of left and right speakers that project sound through the keyboard. So you're able to 
+					enjoy a richer audio experience while chatting online, watching TV shows, listening to music, or playing games.
+				</p>
+			</div>
+		</div>
+		
+		<p class="last-link span-16 last"><a href="/features">View All Features &rsaquo;&rsaquo;</a></p>		
+		
+	</div>
+	
+	<!-- TESTIMONIALS -->
+    <div id="testimonials" class="span-7 last">
+		<h3>What others are saying...</h3>
+					
+			<blockquote>
+				<p>We were amazed to find a world of innovation at Cloudkick; it was a natural fit to migrate our Fortune 500 clients. We've had increased reliability, better visibility, and true cloud portability across our deployments.<br /><span>Jonathan Siegel, <a href="#">ELC Tech</a></span></p>
+			</blockquote>
+			<blockquote>
+				<p>Congratulations on Unfuddle: it's just what we need as a small but serious distributed development team.<br /><span>J.F. Groff, CTO, <a href="#">Fairtilizer</a></span></p>
+						<p>Subversion hosting, bug tracking and now wikis. You guys have seamlessly integrated everything our development team needs.<br /><span>Mike Griggs, Founder, <a href="#">The SuperManager</a></span></p>
+						<p>We love Unfuddle.<br /><span>Adam Siegel, Co-Founder, <a href="#">Inkling Markets</a></span></p>
+					</blockquote>
+				</div>
+	
+{% endblock %}

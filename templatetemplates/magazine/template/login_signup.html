@@ -1,0 +1,102 @@
+{% extends "base_nonav.html" %}
+
+{% block title %}{{block.super}} | Signup or Login{% endblock %}
+
+{% block css.extra %}
+{{block.super}}
+<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}css/login_signup.css" />
+{% endblock css.extra %}
+
+{% block canvas %}
+<div class="span-12 half-page border">
+    <h2>Sign Up</h2>
+    
+    <form action="/website/signup_action/" method="post">     
+    {% csrf_token %}
+    
+        <table>
+            <!--
+            <tr>
+                <td colspan="2">
+                    <p>Sign up for an account<br />
+                    <span>You need to fill up a few fields for that!</span>
+                    </p>
+                </td>
+            </tr>
+            -->
+            <tr>
+                <td><label for="signup-username">Username</label></td>
+                <td><input type="text" id="signup-username" /></td>
+            </tr>
+            <tr>
+                <td><label for="signup-email">E-mail</label></td>
+                <td><p class="field-error">Invalid e-mail!</p><input type="text" id="signup-email" /></td>
+            </tr>
+            <tr>
+                <td><label for="signup-confirm-email">Confirm E-mail</label></td>
+                <td><input type="text" id="signup-confirm-email" /></td>
+            </tr>
+            <tr>
+                <td><label for="signup-password">Password</label></td>
+                <td><input type="password" id="signup-password" /></td>
+            </tr>
+            <tr>
+                <td><label for="signup-confirm-password">Confirm Password</label></td>
+                <td><p class="field-error">Passwords do not match!</p><input type="password" id="signup-confirm-password" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="checkbox" /> I agree to the <a href="#">Terms and Conditions</a>.</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="checkbox" /> Remember me</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Sign Up" /></td>
+            </tr>
+        </table>
+    
+    </form>
+    
+</div>
+
+<div class="span-12 half-page last">
+    <h2>Login</h2>
+    
+    <form action="/website/login_action/" method="post">
+    {% csrf_token %}
+    
+        <table>
+            <!--
+            <tr>
+                <td colspan="2">
+                    <p>Login with your account<br />
+                    <span>Already have an account and just want to login?</span>
+                    </p>
+                </td>
+            </tr>
+            -->
+            <tr>
+                <td><label for="login-email">Username / E-mail</label></td>
+                <td><p class="field-error">Invalid credentials!</p><input type="text" id="login-email" /></td>
+            </tr>
+            <tr>
+                <td><label for="login-password">Password</label></td>
+                <td><input type="password" id="login-password" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="checkbox" /> Remember me</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Login" /></td>
+            </tr>
+        </table>
+    
+    </form>
+    
+</div>
+{% endblock canvas %}

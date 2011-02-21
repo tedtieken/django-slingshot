@@ -1,0 +1,95 @@
+{% extends "base_right.html" %}
+
+{% block title %}{{block.super}} | Post Sample{% endblock %}
+
+{% block css.extra %}
+{{block.super}}
+<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}css/post.css" />
+{% endblock css.extra %}
+
+{% block content %}
+<div class="span-16 last">
+    <h1 class="post-title">Lorem Ipsum Dolor Sit Amet</h1>
+    
+    <p class="post-meta span-14">Posted on November 22, 2010 in <a href="">Lifestyle</a> by <a href="">Borat Sagdiyev</a></p>
+    <p class="span-2 last post-meta"><a href="">Report</a></p>
+    
+    <p class="post-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <img class="post-image" src="{{ MEDIA_URL }}images/post/amsterdam.jpg" />
+    <p class="post-image-caption">Amsterdam</p>
+    <p class="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at erat nulla, sit amet sollicitudin enim. Suspendisse hendrerit eleifend mauris, non molestie sapien tincidunt in. Donec leo nisl, aliquet sit amet semper ut, ornare vel nisi. Fusce tempus commodo tortor. Curabitur vel quam a urna sollicitudin blandit quis vel dui. Phasellus dapibus tempor venenatis. Morbi at dui dui. Sed eget tortor dui. Nunc nunc lectus, bibendum non tristique sed, mattis sit amet nisl. Quisque dapibus rhoncus felis eget convallis. Suspendisse potenti.</p>
+    <img class="post-image" src="{{ MEDIA_URL }}images/post/paris.jpg" />
+    <p class="post-image-caption">The Eiffel Tower in Paris</p>
+    <p class="post-content">Vestibulum eget pulvinar augue. Praesent congue nibh ac orci cursus porttitor. Donec laoreet magna at diam lobortis gravida. Suspendisse congue vehicula neque, vitae sagittis ipsum iaculis vel. Suspendisse ut aliquam arcu. Nullam eleifend lacus ut sem commodo quis luctus turpis ornare. Sed at nisl et massa pharetra condimentum accumsan non nisl. Donec luctus lectus ac mi scelerisque sed ultricies diam fermentum. Sed arcu sem, convallis non convallis eget, egestas sed lectus. In hac habitasse platea dictumst. Pellentesque felis sapien, dictum ac cursus id, lobortis at eros. Donec volutpat condimentum ultricies. Donec varius viverra lorem. Nullam lacinia lectus eget dui faucibus eget accumsan ligula porta. Aliquam erat volutpat.</p>
+    <p class="post-content">Vestibulum eget pulvinar augue. Praesent congue nibh ac orci cursus porttitor. Donec laoreet magna at diam lobortis gravida. Suspendisse congue vehicula neque, vitae sagittis ipsum iaculis vel. Suspendisse ut aliquam arcu. Nullam eleifend lacus ut sem commodo quis luctus turpis ornare. Sed at nisl et massa pharetra condimentum accumsan non nisl. Donec luctus lectus ac mi scelerisque sed ultricies diam fermentum. Sed arcu sem, convallis non convallis eget, egestas sed lectus. In hac habitasse platea dictumst. Pellentesque felis sapien, dictum ac cursus id, lobortis at eros. Donec volutpat condimentum ultricies. Donec varius viverra lorem. Nullam lacinia lectus eget dui faucibus eget accumsan ligula porta. Aliquam erat volutpat.</p>
+</div>
+
+<div class="span-16 last">
+    <p class="column-title">Comments (4)</p>
+    
+    <div class="span-16 last comment">
+        <p class="span-14 commenter"><a href="">Borat S.</a> on April 12 2009, 4:00pm:</p>
+        <p class="span-2 last"><a href="">Report</a></a>     
+        <p class="comment-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+    
+    <div class="span-16 last comment">
+        <p class="span-14 commenter">Anonymous on April 13, 2009 1:02am:</p>
+        <p class="span-2 last"><a href="">Report</a></a>             
+        <p class="comment-text">How is this a reasonable workaround for 3G / 3GS? I have to buy, borrow, or beg use of a 4G iPhone or an iPad to do this?? In some wall-to-wall Apple workplace, OK, but what if it's not possible?<br /><br />
+        This is like having a feature in a car that only gets enabled by driving a new model of the same car around the block. Sounds simple to the engineers, but not in the real world.</p>         
+    </div>
+    
+    <div class="span-16 last comment">
+        <p class="span-14 commenter">Regina Phalange wrote:</p>
+        <p class="span-2 last"><a href="">Report</a></a>     
+        <p class="comment-text">I'm finding it impossible to setup. When I first tried to setup MobileMe on my phone, it wouldn't let me because my Apple ID was not an e-mail address. When I changed my ID to be one of my addresses it decided that it wouldn't show as "verified" no matter how many times I clicked the link in the verification e-mails. When I login to the Find My iPhone app, it tells me that no devices are registered with the ID</p>        
+    </div>
+    
+    <div class="span-16 last comment">
+        <p class="span-14 commenter">TheGamer wrote:</p>
+        <p class="span-2 last"><a href="">Report</a></p>
+        <p class="comment-text">How long until Apple plugs this hole?</p>        
+    </div>
+    
+    <hr />
+    
+    <span id="add-comments">Add your comments:</span>
+    
+    <form>
+        <table>
+            <tr>
+                <td><label>Name</label></td>
+                <td><input type="text" /></td>
+            </tr>
+            <tr>
+                <td><label>Website</label></td>
+                <td><input type="text" /></td>
+            </tr>            
+            <tr>
+                <td><label>E-mail</label></td>
+                <td><input type="text" /></td>
+            </tr>
+            
+            <tr>
+                <td><label>Comments</label></td>
+                <td><textarea></textarea></td>
+            </tr>
+            
+            <tr>
+                <td>Recaptcha</td>
+                <td><iframe src='http://www.google.com/recaptcha/demo/'allowtransparency='true' height='165' width='500' style='border:0px;' scrolling='no'>
+                </iframe>
+                </td>
+            
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+{% endblock content %}
+
+{% block side.extra %}
+{% endblock side.extra %}

@@ -1,0 +1,69 @@
+Note, this is a pre-alpha version of the script, email me at ted dot tieken at gmail dot com if you have any comments or bugs.  
+
+The interface/rules/behavior may change slightly.
+
+###########################################################
+#How to use the current version of the scaffolding script.  
+###########################################################
+
+1. Download and unzip package
+
+2. Move the scaffold directory to your working project.
+	[myproject]
+	   manage.py
+	   urls.py
+	   /[my-app]/
+	      ...
+	   /scaffold/
+	
+3. Create your models.  Your models should define a method called scaffold.  The scaffold method should return a dictonary that defines an entry "build_list" which is a list of the items you want scafolded.
+	return {"build_list": [
+		"create", 
+		"detail", 
+		"list, 
+		["list", "my-name-for-secnd-list"]
+	}
+	Note that entries in the list can either be strings or lists themselves.  When you use a list it tells the engine "[Use this recipe", "and call it this in the output"]
+
+4. Go to the root of your project.
+	$ python manage.py syncdb
+	$ python manage.py shell
+	Note: it is helpful but not 
+	
+5. Once you're in the django shell 
+	>>> from scaffold.scaffold import scaffold
+	>>> scaffold('my-app')
+	This code will create the /scaffold/[my-app][timestamp]/ directory and the output files.
+6. Open the /scaffold/[my-app][timestamp]/ directory, you should see
+	urls.py
+	views.py
+	admin.py
+	forms.py
+	/templates/
+	  [template for each recipe]
+	  base.html -- very crude base.html
+	
+7. Copy the scaffolded code into your application
+	a. If you don't have existing code, you can directly copy the contents into the [myproject]/[my-app]/ directory replacing the existing files.  
+	b. If you already have code, you'll need to open each file and copy the contents by hand.
+	
+#######################################################
+#Recipes assume you follow a few coding best practices:  
+#######################################################
+	- The recipes assume you have namespaced your Urls using the format [my-app]:[recipe-name].  The output urls.py has the code necessary to do this in the project-level urls.py.  
+	- The recipes assume you have both the filesystem and app-directory midleware installed
+	- The recipes assume you have CSRF middleware installed (and thus are using 1.2+).  If you aren't using CSRF middleware, you'll need to remove the {% CSRF_token %} from the form output templates.
+	- The recipes assume you have defined a __unicode__ method on each model.  If you haven't nothing will fail, just the output will look a bit weird.
+
+#######################################################
+#Recipes currently included:
+#######################################################
+- create an alias for create.table, future will include a create.div as well
+- create.table (the only create version currently)
+- detail
+- edit an alias for edit.table
+- edit.table (the only edit version currently)
+- list a full list view, not an alias.  Does not paginate results
+- list.paginated - a list view that paginates results by 10
+
+If you create your own recipe, the engine will take everything before the first "." as the default name for the scaffold patterns (view name, url name, etc.).  This is for two purposes: first it ensures we don't end up with periods in urls, second it allows meta-information and versioning to the right of the period.  

@@ -1,0 +1,8 @@
+from django.conf.urls.defaults import *
+
+# Add to site level urls
+#    (r'^!!!APP_NAME!!!/', include('!!!APP_NAME!!!.urls', namespace='!!!APP_NAME!!!')),
+
+urlpatterns = patterns('!!!APP_NAME!!!.views',
+!!!THE_URLS!!!
+)

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	FAQs
+{% endblock %}
+
+{% block contents %}
+	<div id="faqs" class="span-24 last">
+		<h2>Frequently Asked Questions</h2>
+		
+		<h3>General</h3>
+		
+		<dl>
+			<dt>What is Unfuddle and why should our team use it?</dt>
+			<dd>
+				<p>Unfuddle is a secure, hosted software development environment and project management solution for small software development teams.</p>
+				<p>Ironically, Unfuddle is nothing new. Project and code management tools have existed for a very long time. However, as a small consulting company, we have often had the opportunity to work with other people's code. Despite the wide availability of some excellent tools (many even open source) for helping teams manage their projects, we have been astonished at just how bad some teams are at keeping their projects organized - even at the most basic level.</p>
+				<p>We know that you don't have time to get a server up and running and then configure and secure code repositories, ticketing systems and project management tools.</p>
+				<p>Unfuddle is our way of helping you and your team do things right.</p>
+			</dd>
+			
+			<dt>How quickly can my project be up and running?</dt>
+			<dd>
+				<p>Unfuddle projects are ludicrously easy to create. Great tools and practices FAST. That's the point!</p>
+				<p>You can be up and running with a new project in as little as 1 minute.</p>
+			</dd>
+			
+			<dt>What browsers are compatible with Unfuddle?</dt>
+			<dd>
+				<p>Unfuddle has been developed for use with the following browsers:</p>
+				<ul>
+					<li>Mozilla Firefox 3.6+</li>
+					<li>Safari 5+</li>
+					<li>Internet Explorer 7+</li>
+				</ul>
+			</dd>
+			
+			<dt>How secure is my data?</dt>
+			<dd>
+				<p>We value the security of your data very highly. We employ a variety of physical precautions such as hardware firewalls and restricted physical access to our servers. Additionally, all data can be transferred between your team and our servers using 128-bit SSL (Secure Socket Layer) connections.</p>
+				<p>Our physical servers and firewalls are managed by Amazon, a provider of state-of-the-art virtualized server infrastructure. For more information about the state-of-the-art hosting platform provided by Amazon, please see http://aws.amazon.com.</p>
+			</dd>
+			
+			<dt>How much control do I have over user permissions?</dt>
+			<dd>
+				<p>Unfuddle provides you with fine control over what a user in your project can do.</p>
+				<p>Whether you want to give a user the ability to view and modify everything in the project or just the ability to view and create tickets for bug reporting. You can be as specific as you want for each user in an Unfuddle project.</p>
+			</dd>
+			
+			<dt>What do I do if I need support?</dt>
+			<dd>
+				<p>We have tried very hard to make Unfuddle one of the simplest software applications you have ever used. However, if you need help or have any questions, you can email us at <a href="#">support@unfuddle.com</a>.</p>
+			</dd>
+			
+			<dt>I have lost my password. What do I do now?</dt>
+			<dd>
+				<p>You can have a welcome email reissued for any account you have created. You must have access to the email address which was used to create the account or project.</p>
+				<p>Simply go to your account sign-in page and click the "Password Reminder" link then enter your email address. Please be aware that this process will reset the passwords on all users in the account associated with this email address.</p>
+			</dd>
+			
+			<dt>How do I delete my account?</dt>
+			<dd>
+				<p>You may easily cancel your account right from within the Unfuddle interface. To do this:</p>
+				<ol>
+					<li>Sign in to your Unfuddle Account</li>
+					<li>Select "Account Settings" from the drop-down menu in the upper right hand corner of the screen.</li>
+					<li>Click "Delete this account" from the right hand column</li>
+					<li>Confirm the deletion on the following pages.</li>
+				</ol>
+			</dd>
+		</dl>
+		
+		<h3>Subversion</h3>
+		
+		<dl>
+			<dt>What is Subversion?</dt>
+			<dd>
+				<p>Unfuddle uses Subversion for your code storage and versioning. Subversion was originally designed as a successor to CVS and is now one of the most popular and stable source code repositories and versioning systems. Subversion affords your project a variety of advantages, including:</p>
+				<ul>
+					<li>directories, renames, and file meta-data are versioned</li>
+					<li>atomic commits</li>
+					<li>branching and tagging</li>
+					<li>versioning of symbolic links</li>
+					<li>space efficient binary diffing</li>
+					<li>client availability on a multitude of platforms</li>
+				</ul>
+			</dd>
+			
+			<dt>What version of Subversion are you running on your servers?</dt>
+			<dd>
+				<p>Unfuddle is currently running with Subversion 1.6.6.</p>
+			</dd>
+			
+			<dt>How can I checkout and modify files in my source code repository?</dt>
+			<dd>
+				<p>Unfuddle offers you direct access to your Subversion repository over http, or https for certain plans. Once you have the Subversion client installed on your development machine, accessing your project repository is simple.</p>
+				<code>svn checkout http://subdomain.unfuddle.com/svn/subdomain_abbreviation/ local_directory_name</code>
+				<p>or for plans with SSL:</p>
+				<code>svn checkout https://subdomain.unfuddle.com/svn/subdomain_abbreviation/ local_directory_name</code>
+				<p>NOTE: subdomain and abbreviation must be replaced with values appropriate to your account and repository.</p>
+				<p>Please also note that you will have to enter your username and password for authentication.</p>
+				<p>If you have an existing Subversion repository which you would like to move to Unfuddle, simply make a dump (svnadmin dump) and contact us. We will be glad to assist you in loading your dump file into your Unfuddle account.</p>
+				<p>For more information on how to use Subversion, we recommend the free <a href="#">Subversion Book</a> as well as the excellent <a href="#">Pragmatic Version Control Using Subversion</a> by the <a href="#">Pragmatic Programmers</a>.</p>
+			</dd>
+		</dl>
+		
+		<p class="last-link"><a href="#">Back to top</a></p>
+		
+	</div>
+{% endblock %}

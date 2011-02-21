@@ -1,0 +1,81 @@
+__author__ = 'Ted'
+
+# URL Path has /model/action/ format
+!!!URL!!!
+url(r'^!!!URL_PATH!!!$', '!!!VIEW_NAME!!!', name='!!!URL_NAME!!!'),
+!!!URL!!!
+
+!!!VIEW_IMPORTS!!!
+from django.shortcuts import render_to_response, get_object_or_404, HttpResponseRedirect 
+from django.template import RequestContext 
+from django.core.urlresolvers import reverse
+#from django.contrib.auth.decorators import login_required
+!!!VIEW_IMPORTS!!!
+
+!!!VIEW!!!
+#@login_required    
+def !!!VIEW_NAME!!!(request):
+    if request.method == 'POST':
+        form = !!!FORM_NAME!!!(request.POST)
+        if form.is_valid():
+            item = form.save()
+            return HttpResponseRedirect(reverse('!!!URL_APP_TAG!!!:!!!URL_DETAIL!!!', kwargs={'id':item.id}))
+    else:
+        form = !!!FORM_NAME!!!()
+    return render_to_response('!!!TEMPLATE_PATH!!!!!!TEMPLATE_NAME!!!', {'form': form, }, context_instance=RequestContext(request))
+!!!VIEW!!!
+
+!!!FORM_IMPORTS!!!
+!!!FORM_IMPORTS!!!
+!!!FORM!!!
+class !!!FORM_NAME!!!(forms.ModelForm):
+    class Meta:
+        model = !!!MODEL_NAME!!!
+        #fields: !!!FORM_FIELDS_ALL!!!        
+        #exclude = (!!!FORM_FIELDS!!!)
+        #fields = (!!!FORM_FIELDS!!!)
+!!!FORM!!!
+
+
+!!!TEMPLATE!!!
+{% extends "!!!TEMPLATE_BASE!!!" %}
+{% block title %}{{block.super}} - !!!MODEL_NAME!!! - !!!ACTION_NAME!!!{% endblock %}
+{% block content %}
+<h2>Create New !!!MODEL_NAME!!!</h2>
+<div class="form_info">
+To create a new !!!MODEL_NAME!!!, fill in the fields below and press submit.
+</div>
+<div>
+<form action="{% url !!!URL_APP_TAG!!!:!!!URL_NAME!!! %}" method="post">{% csrf_token %}
+    <table cellspacing="0"> 
+        {% for field in form %}
+        <tr {% if field.errors %}class = "error" {% endif %}>
+            <td>{{ field.label_tag }}</td>
+            <td id="td_for_{{field.name}}">
+                {{ field }}
+            </td>
+            <td><div class="help_text" id="help_text_{{field.name}}">{{field.help_text}}</div>
+                {% if field.errors %}
+                    <div class="error_wrapper">{{ field.errors }}</div> 
+                {% endif %}
+            </td>
+        </tr>        
+        {% endfor %}
+        <tr>
+            <td colspan="2" align="right">
+            <input type="submit" value="Submit" />
+            </td>
+            <td></td>
+        </tr>    
+    </table>
+</form>
+<div>
+Links are here, uncomment them<br />
+{% comment %}
+<a href="{% url !!!URL_APP_TAG!!!:!!!URL_LIST!!! %}">All {{'!!!MODEL_NAME!!!'|pluralize}}</a><br />
+<a href="{{!!!TEMPLATE_OBJECT_NAME!!!.get_absolute_url}}">{{!!!TEMPLATE_OBJECT_NAME!!!}}</a><br />
+<a href="{% url !!!URL_APP_TAG!!!:!!!URL_CREATE!!! %}">Add new !!!MODEL_NAME!!!</a><br />
+{% endcomment %}
+</div>
+{% endblock content %}
+!!!TEMPLATE!!!

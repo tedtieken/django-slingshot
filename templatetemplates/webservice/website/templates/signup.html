@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Plans &amp; Pricing / Signup
+{% endblock %}
+
+{% block contents %}
+	
+	<div id="signup-form" class="span-24 last">
+		<h2>Select Your Plan</h2>
+	
+		<form action="#" method="post">
+			<table id="plans">
+				<tr id="plan-type">
+					<th class="blank-cell"></th>
+					<td>Free</td>
+					<td>Basic</td>
+					<td>Professional</td>
+					<td>Unlimited</td>
+				</tr>
+				
+				<tr>
+					<th>Monthly Fee</th>
+					<td>$0</td>
+					<td>$5/mo</td>
+					<td>$10/mo</td>
+					<td>$20/mo</td>
+				</tr>
+				
+				<tr>
+					<th>Users</th>
+					<td>5</td>
+					<td>10</td>
+					<td>50</td>
+					<td>Unlimited</td>
+				</tr>
+				
+				<tr>
+					<th>Disk Space</th>
+					<td>100mb</td>
+					<td>1gb</td>
+					<td>5gb</td>
+					<td>Unlimited</td>
+				</tr>
+				
+				<tr>
+					<th>Bug Tracking</th>
+					<td class="yes">Yes</td>
+					<td class="yes">Yes</td>
+					<td class="yes">Yes</td>
+					<td class="yes">Yes</td>
+				</tr>
+				
+				<tr>
+					<th>SSL?</th>
+					<td class="no">No</td>
+					<td class="yes">Yes</td>
+					<td class="yes">Yes</td>
+					<td class="yes">Yes</td>
+				</tr>
+				
+				<tr>
+					<th>Messages</th>
+					<td class="no">No</td>
+					<td class="no">No</td>
+					<td class="yes">Yes</td>
+					<td class="yes">Yes</td>
+				</tr>
+				
+				<tr>
+					<th>File Attachments</th>
+					<td class="no">No</td>
+					<td class="yes">Yes</td>
+					<td class="yes">Yes</td>
+					<td class="yes">Yes</td>
+				</tr>
+				
+				<tr>
+					<th>Demographic</th>
+					<td>Small, single developer projects</td>
+					<td>Small teams of developers</td>
+					<td>Larger development teams</td>
+					<td>Very large development teams</td>
+				</tr>
+				
+				<tr id="select-plan">
+					<th class="blank-cell"></th>
+					<td><input type="radio" id="plan-1" name="selected_plan" /> <label for="plan-1">Select</label></td>
+					<td><input type="radio" id="plan-2" name="selected_plan" /> <label for="plan-2">Select</label></td>
+					<td><input type="radio" id="plan-3" name="selected_plan" checked="checked" /> <label for="plan-3">Select</label></td>
+					<td><input type="radio" id="plan-4" name="selected_plan" /> <label for="plan-4">Select</label></td>
+				</tr>
+			</table>
+			
+			<h2>Account Details</h2>
+			
+			<table id="account-details" class="form-type">
+				<tr>
+					<td><label>Selected Plan</td>
+					<td>Professional</td>
+				</tr>
+			
+				<tr>
+					<td><label>Username</label></td>
+					<td><input type="text" /></td>
+				</tr>
+				
+				<tr>
+					<td><label>Password</label></td>
+					<td><input type="password" /></td>
+				</tr>
+				
+				<tr>
+					<td><label>Confirm Password</label></td>
+					<td><input type="password" /></td>
+				</tr>
+				
+				<tr>
+					<td><label>E-mail</label></td>
+					<td><input type="text" /></td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td><input type="checkbox" id="terms-conditions" /> I agree to the <a href="#">Terms and Conditions</a>.</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Sign Up" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	
+{% endblock %}

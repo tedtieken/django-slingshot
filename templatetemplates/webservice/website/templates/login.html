@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Login
+{% endblock %}
+
+{% block contents %}
+	
+	<div id="login-form" class="span-24 last">
+			<h2>Login</h2>
+			
+			<table id="login-details" class="form-type">
+				<tr>
+					<td><label>Username</label></td>
+					<td><input type="text" /></td>
+				</tr>
+				
+				<tr>
+					<td><label>Password</label></td>
+					<td><input type="password" /></td>
+				</tr>				
+				
+				<tr>
+					<td></td>
+					<td><a href="#">Forgot Password?</a></td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Login" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	
+{% endblock %}

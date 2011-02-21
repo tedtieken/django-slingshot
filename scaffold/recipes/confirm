@@ -1,0 +1,65 @@
+
+# URL Path has /model/action/ format
+!!!URL!!!
+url(r'^!!!URL_PATH!!!$', '!!!VIEW_NAME!!!', name='!!!URL_NAME!!!'), #confirm
+!!!URL!!!
+
+!!!VIEW_IMPORTS!!!
+#django.core.exceptions import PermissionDenied
+#from django.contrib.auth.decorators import login_required
+!!!VIEW_IMPORTS!!!
+
+!!!VIEW!!!
+#@login_required    
+def !!!VIEW_NAME!!!(request):
+    #if request.user != !!!OBJECT_NAME!!!.user:
+    #   raise PermissionDenied
+    if request.method == "POST":
+        form = ConfirmForm(request.POST)
+        if form.is_valid():
+            if form.cleaned_data['confirm'] == "Yes":
+                #messages.success(request, 'You said Yes!')
+            else:
+                #messages.success(request, "You said No")
+            return HttpResponseRedirect(reverse('!!!URL_APP_TAG!!!:!!!URL_NAME!!!')
+    else:
+        form = ConfirmForm()    
+
+    return render_to_response('!!!TEMPLATE_PATH!!!!!!TEMPLATE_NAME!!!', locals(), context_instance=RequestContext(request))    
+!!!VIEW!!!
+
+!!!FORM_IMPORTS!!!
+!!!FORM_IMPORTS!!!
+!!!FORM!!!
+class ConfirmForm(forms.Form):
+    confirm = forms.CharField(widget=forms.HiddenInput, initial='Yes')
+!!!FORM!!!
+
+
+!!!TEMPLATE!!!
+{% extends "!!!TEMPLATE_BASE!!!" %}
+{% block title %}{{block.super}} - !!!MODEL_NAME!!! - {{!!!TEMPLATE_OBJECT_NAME!!!}} - !!!ACTION_NAME!!!{% endblock %}
+{% block content %}
+
+
+<h2>Confirm !!!ACTION_NAME!!!</h2>
+<div class="form_info">
+Are you sure?  
+</div>
+
+<div>
+ <form action="{% url !!!URL_APP_TAG!!!:!!!URL_NAME!!! %}" method="post">{% csrf_token %}
+  {{form.as_p}}
+   <input type="submit" value="Yes, Confirm" /> <a href="{% url !!!URL_APP_TAG!!!:!!!URL_NAME!!! %}">No, Go Back</a>
+ </form>
+ <div>
+  Links are here, uncomment them<br />
+  {% comment %}
+  <a href="{% url !!!URL_APP_TAG!!!:!!!URL_LIST!!! %}">All {{'!!!MODEL_NAME!!!'|pluralize}}</a><br />
+  <a href="{% url !!!URL_APP_TAG!!!:!!!URL_DETAIL!!! !!!TEMPLATE_OBJECT_NAME!!!.id %}">Back to {{!!!TEMPLATE_OBJECT_NAME!!!}}</a><br />
+  <a href="{% url !!!URL_APP_TAG!!!:!!!URL_CREATE!!! %}">Add new !!!MODEL_NAME!!!</a><br />
+  {% endcomment %}
+ </div>
+</div>
+{% endblock content %}
+!!!TEMPLATE!!!

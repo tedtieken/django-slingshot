@@ -1,0 +1,58 @@
+__author__ = 'Ted'
+
+# URL Path has /model/action/ format
+!!!URL!!!
+url(r'^!!!URL_PATH!!!(?P<id>[\d]+)/$', '!!!VIEW_NAME!!!', name='!!!URL_NAME!!!'),
+!!!URL!!!
+
+!!!VIEW_IMPORTS!!!
+from django.shortcuts import render_to_response, get_object_or_404, HttpResponseRedirect
+from django.template import RequestContext 
+from django.core.urlresolvers import reverse
+#from django.http import HttpResponse
+#from django.utils import simplejson
+#from django.contrib.auth.decorators import login_required
+!!!VIEW_IMPORTS!!!
+
+!!!VIEW!!!
+def !!!VIEW_NAME!!!(request, id):
+    !!!OBJECT_NAME!!! = get_object_or_404(!!!MODEL_NAME!!!, id=id)
+    #if request.is_ajax():
+    #  return HttpResponse(simplejson.dumps(!!!OBJECT_NAME!!!), mimetype='application/javascript')
+    return render_to_response('!!!TEMPLATE_PATH!!!!!!TEMPLATE_NAME!!!', {'!!!TEMPLATE_OBJECT_NAME!!!':!!!OBJECT_NAME!!!,}, context_instance=RequestContext(request))
+!!!VIEW!!!
+
+!!!FORM_IMPORTS!!!
+!!!FORM_IMPORTS!!!
+!!!FORM!!!
+!!!FORM!!!
+
+
+!!!TEMPLATE!!!
+{% extends "!!!TEMPLATE_BASE!!!" %}
+{% block title %}{{block.super}} - !!!MODEL_NAME!!! - {{!!!TEMPLATE_OBJECT_NAME!!!}} - !!!ACTION_NAME!!!{% endblock %}
+{% block content %}
+<h2>{{!!!TEMPLATE_OBJECT_NAME!!!}}</h2>
+<div>
+!!!TEMPLATE_OBJECT_ASBR_WNAME!!!
+</div>
+{% comment %}
+<div>
+Related Object Sample Code
+{% for object in !!!TEMPLATE_OBJECT_NAME!!!.FOO_set.all %}
+  {{object}}
+{% endfor %}
+</div>
+{% endcomment %}
+<div>
+Links are here, uncomment them<br />
+{% comment %}
+<a href="{% url !!!URL_APP_TAG!!!:!!!URL_LIST!!! %}">All {{'!!!MODEL_NAME!!!'|pluralize}}</a><br />
+<a href="{% url !!!URL_APP_TAG!!!:!!!URL_DETAIL!!! !!!TEMPLATE_OBJECT_NAME!!!.id %}">link to self</a><br />
+<a href="{{!!!TEMPLATE_OBJECT_NAME!!!.get_absolute_url}}">{{!!!TEMPLATE_OBJECT_NAME!!!}}</a><br />
+<a href="{% url !!!URL_APP_TAG!!!:!!!URL_EDIT!!! !!!TEMPLATE_OBJECT_NAME!!!.id %}">edit this</a><br />
+<a href="{% url !!!URL_APP_TAG!!!:!!!URL_CREATE!!! %}">Add new !!!MODEL_NAME!!!</a><br />
+{% endcomment %}
+</div>
+{% endblock content %}
+!!!TEMPLATE!!!
