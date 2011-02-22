@@ -85,3 +85,12 @@ div#copyright {
 	width: 100%;}
 div#copyright span {
 	line-height: 40px; }
+	
+/* SLINGSHOT */
+div#slingshot {
+	border-top: 1px solid #ddd;
+	height: 40px;
+	width: 100%;
+	text-align: center;
+    line-height: 40px;
+}

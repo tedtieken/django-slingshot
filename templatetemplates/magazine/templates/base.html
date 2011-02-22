@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>{% block title %}Blooks{% endblock %}</title>
+		<title>{% block title %}Magazine Template{% endblock %}</title>
 		{% block meta %}
         <meta http-equiv="content-type" content="{% block meta.content-type %}text/html;charset=UTF-8{% endblock meta.content-type %}" />
         <meta name="description" content="{% block meta.description %}{% endblock meta.description %}" />
@@ -15,7 +15,7 @@
 		<link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/print.css" type="text/css" media="print">
 		<!--[if lt IE 8]><link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 		
-		<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}css/core.css" />
+		<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}css/base.css" />
         
         <!-- LOAD PAGE-SPECIFIC CSS -->
         {% block css.extra %}{% endblock css.extra %}
@@ -26,14 +26,12 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-                {% block js.onready %}{% endblock js.onready %}
-				/*
-                var x = '<span id="next-next"> &rsaquo;&rsaquo;</span>';
-                $('p.column-title a').hover(function(){
-                    $(this).append(x);
+                $('p.preview-text a').hide();
+                $('p.preview-text').hover(function(){
+                    $(this).find('a').show();
                 }, function(){
-                    $(this).find('span#next-next').detach();
-                });*/
+                    $(this).find('a').hide();
+                });                
 			});
 		</script>
 		{% block js.extra %}{% endblock js.extra %}
@@ -70,7 +68,7 @@
             <div class="span-16 last"><img src="{{ MEDIA_URL }}images/ad_630x100.png"></div>
         </div>
         
-        {% comment %}
+        {% block header.nav %}
 		<!-- MAIN NAVI - CATEGORIES -->
 		<div id="nav-container" class="container">
         		<div id="main-navi" class="span-24 last">
@@ -85,21 +83,17 @@
         			</ul>
         		</div> 
         </div>
-        {% endcomment %}
-
-        <!-- BLACK BAR -->
-        <div id="black-bar" class="container"></div>
+        {% endblock header.nav %}
         {% endblock header %}
         
-        
+        {% block canvas %}
         <!-- CONTENTS -->
         <div id="contents" class="container">
-            {% block canvas %}
                 <div class="span-24 last" style="min-height: 400px;">
                     {% block content %}<p>ERROR: No contents found for specified URL.</p>{% endblock content %}
                 </div>
-            {% endblock canvas %}            
         </div>
+        {% endblock canvas %}            
 	    
         {% block footer %}
         <!-- FOOTER -->
@@ -152,7 +146,7 @@
 		<div id="copyright">
 			<div class="container">
 				<div class="span-12">
-					<span>Copyright 2010 by Blooks, LLC.</span>
+					<span>Copyright 2010 by DjangoSlingshot.com</span>
 				</div>
 				
 				<div class="span-12 last" style="text-align:right;">
@@ -165,6 +159,14 @@
 			</div>
 		</div>
 		{% endblock footer %}
+        <div id="slingshot">
+            <div class="container">
+                {% comment %}
+                You can change or remove the following link, subject to a few conditions.  Please read the license document that came with this package for more information.
+                {% endcomment %}
+                <a href="http://www.djangoslingshot.com">Design by DjangoSlingshot.com</a> 
+            </div>
+        </div>
 	</body>
 	{% endblock body %}		
 </html>

@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}
-	Features
-{% endblock %}
+{% block title %}{{block.super}} - Features{% endblock %}
 
-{% block contents %}
+{% block css.extra %}{{block.super}}{% endblock css.extra %}
+{% block js.extra %}{{block.super}}{% endblock js.extra %}
+
+{% block content %}
 	
 	<div id="features" class="span-24 last">
 		<h2>Features</h2>
@@ -14,7 +15,7 @@
 		
 			<div>
 				<div class="span-9">
-					<img src="{{ MEDIA_URL }}/images/top-feature-pic-350.png" />
+					<img src="{{ MEDIA_URL }}images/top-feature-pic-350.png" />
 				</div>
 				
 				<div class="span-15 last">
@@ -40,13 +41,13 @@
 				</div>
 				
 				<div class="span-9 last">
-					<img src="{{ MEDIA_URL }}/images/top-feature-pic-350.png" />
+					<img src="{{ MEDIA_URL }}images/top-feature-pic-350.png" />
 				</div>
 			</div>
 			
 			<div>
 				<div class="span-9">
-					<img src="{{ MEDIA_URL }}/images/top-feature-pic-350.png" />
+					<img src="{{ MEDIA_URL }}images/top-feature-pic-350.png" />
 				</div>
 				<div class="span-15 last">
 					<h4>Long-Lasting Battery. Instant on. Even after a month off.</h4>
@@ -71,7 +72,7 @@
 		
 		<div>
 			<div class="span-4">
-				<img src="{{ MEDIA_URL }}/images/top-feature-pic.png" />
+				<img src="{{ MEDIA_URL }}images/top-feature-pic.png" />
 			</div>
 			<div class="span-20 last">
 				<h4>Stereo Speakers. Heard but not seen.</h4>
@@ -91,7 +92,7 @@
 			<hr />
 		
 			<div class="span-6">
-				<img src="{{ MEDIA_URL }}/images/top-feature-pic-230.png" />
+				<img src="{{ MEDIA_URL }}images/top-feature-pic-230.png" />
 				<h4>Powerfully efficient.</h4>
 				<p>
 					The Mac Pro meets the stringent low power requirements set by the EPA, giving it ENERGY STAR qualification. 
@@ -101,7 +102,7 @@
 			</div>
 			
 			<div class="span-6">
-				<img src="{{ MEDIA_URL }}/images/top-feature-pic-230.png" />
+				<img src="{{ MEDIA_URL }}images/top-feature-pic-230.png" />
 				<h4>Power when (and where) you need it.</h4>
 				<p>
 					The Mac Pro features Turbo Boost, a dynamic performance technology that automatically boosts the processor clock speed 
@@ -111,7 +112,7 @@
 			</div>
 			
 			<div class="span-6">
-				<img src="{{ MEDIA_URL }}/images/top-feature-pic-230.png" />
+				<img src="{{ MEDIA_URL }}images/top-feature-pic-230.png" />
 				<h4>Choose your cores: 4, 6, 8, or 12.</h4>
 				<p>
 					The new Mac Pro offers two advanced processor options from Intel. The Quad-Core Intel Xeon "Nehalem" processor is 
@@ -120,7 +121,7 @@
 			</div>
 			
 			<div class="span-6 last">
-				<img src="{{ MEDIA_URL }}/images/top-feature-pic-230.png" />
+				<img src="{{ MEDIA_URL }}images/top-feature-pic-230.png" />
 				<h4>Powerfully efficient.</h4>
 				<p>
 					The Mac Pro meets the stringent low power requirements set by the EPA, giving it ENERGY STAR qualification. 
@@ -135,7 +136,7 @@
 			<hr />
 		
 			<div class="span-4">
-				<img src="{{ MEDIA_URL }}/images/top-feature-pic-150.png" />
+				<img src="{{ MEDIA_URL }}images/top-feature-pic-150.png" />
 				<h4>Powerfully efficient.</h4>
 				<p>
 					The Mac Pro meets the stringent low power requirements set by the EPA, giving it ENERGY STAR qualification. 
@@ -145,7 +146,7 @@
 			</div>
 			
 			<div class="span-4">
-				<img src="{{ MEDIA_URL }}/images/top-feature-pic-150.png" />
+				<img src="{{ MEDIA_URL }}images/top-feature-pic-150.png" />
 				<h4>Power when (and where) you need it.</h4>
 				<p>
 					The Mac Pro features Turbo Boost, a dynamic performance technology that automatically boosts the processor clock speed 
@@ -155,7 +156,7 @@
 			</div>
 			
 			<div class="span-4">
-				<img src="{{ MEDIA_URL }}/images/top-feature-pic-150.png" />
+				<img src="{{ MEDIA_URL }}images/top-feature-pic-150.png" />
 				<h4>Choose your cores: 4, 6, 8, or 12.</h4>
 				<p>
 					The new Mac Pro offers two advanced processor options from Intel. The Quad-Core Intel Xeon "Nehalem" processor is 
@@ -164,7 +165,7 @@
 			</div>
 			
 			<div class="span-4">
-				<img src="{{ MEDIA_URL }}/images/top-feature-pic-150.png" />
+				<img src="{{ MEDIA_URL }}images/top-feature-pic-150.png" />
 				<h4>Powerfully efficient.</h4>
 				<p>
 					The Mac Pro meets the stringent low power requirements set by the EPA, giving it ENERGY STAR qualification. 
@@ -174,7 +175,7 @@
 			</div>
 			
 			<div class="span-4">
-				<img src="{{ MEDIA_URL }}/images/top-feature-pic-150.png" />
+				<img src="{{ MEDIA_URL }}images/top-feature-pic-150.png" />
 				<h4>Power when (and where) you need it.</h4>
 				<p>
 					The Mac Pro features Turbo Boost, a dynamic performance technology that automatically boosts the processor clock speed 
@@ -184,7 +185,7 @@
 			</div>
 			
 			<div class="span-4 last">
-				<img src="{{ MEDIA_URL }}/images/top-feature-pic-150.png" />
+				<img src="{{ MEDIA_URL }}images/top-feature-pic-150.png" />
 				<h4>Choose your cores: 4, 6, 8, or 12.</h4>
 				<p>
 					The new Mac Pro offers two advanced processor options from Intel. The Quad-Core Intel Xeon "Nehalem" processor is 

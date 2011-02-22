@@ -54,7 +54,7 @@ MEDIA_ROOT = os.path.join(PROJECT_PATH, 'assets')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = '/assets'
+MEDIA_URL = '/assets/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -85,7 +85,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(PROJECT_PATH, 'template'),	
+    os.path.join(PROJECT_PATH, 'templates'),	
 )
 
 INSTALLED_APPS = (

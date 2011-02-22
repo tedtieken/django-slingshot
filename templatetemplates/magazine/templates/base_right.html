@@ -1,10 +1,14 @@
-{% extends "core.html" %}
+{% extends "base.html" %}
 
 {% block css.extra %}
-<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}css/core_right.css" />
+<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}css/base_right.css" />
 {% endblock css.extra %}
 
 {% block canvas %}
+<!-- CONTENTS -->
+<div id="contents" class="container">
+
+
 <!-- PAGE-SPECIFIC CONTENTS -->
 <div class="span-16">
     {% block content %}&nbsp;{% endblock content %}
@@ -80,5 +84,7 @@
     
     {% block side.extra %}{% endblock side.extra %}
     
+</div>
+
 </div>
 {% endblock canvas %}

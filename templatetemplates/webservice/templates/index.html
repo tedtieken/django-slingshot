@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}
-	Home
-{% endblock %}
+{% block title %}{{block.super}} - Home{% endblock %}
 
-{% block contents %}
+{% block css.extra %}{{block.super}}{% endblock css.extra %}
+{% block js.extra %}{{block.super}}{% endblock js.extra %}
+
+{% block content %}
 			<div id="fold" class="span-24 last">
 				<div class="span-8">
 					<div id="main-pic">
@@ -30,7 +31,7 @@
 		
 		<div>
 			<div class="span-4">
-				<img src="{{ MEDIA_URL }}/images/top-feature-pic.png" />
+				<img src="{{ MEDIA_URL }}images/top-feature-pic.png" />
 			</div>
 			
 			<div class="span-12 last">
@@ -46,7 +47,7 @@
 		
 		<div>
 			<div class="span-4">
-				<img src="{{ MEDIA_URL }}/images/top-feature-pic.png" />
+				<img src="{{ MEDIA_URL }}images/top-feature-pic.png" />
 			</div>
 			<div class="span-12 last">
 				<h4>Multi-Touch Trackpad. It's love at first click, tap, and scroll.</h4>
@@ -61,7 +62,7 @@
 		
 		<div>
 			<div class="span-4">
-				<img src="{{ MEDIA_URL }}/images/top-feature-pic.png" />
+				<img src="{{ MEDIA_URL }}images/top-feature-pic.png" />
 			</div>
 			<div class="span-12 last">
 				<h4>Long-Lasting Battery. Instant on. Even after a month off.</h4>
@@ -78,7 +79,7 @@
 		
 		<div>
 			<div class="span-4">
-				<img src="{{ MEDIA_URL }}/images/top-feature-pic.png" />
+				<img src="{{ MEDIA_URL }}images/top-feature-pic.png" />
 			</div>
 			<div class="span-12 last">
 				<h4>Stereo Speakers. Heard but not seen.</h4>

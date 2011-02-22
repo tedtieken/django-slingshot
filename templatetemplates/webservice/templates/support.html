@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}
-	Support
-{% endblock %}
+{% block title %}{{block.super}} - Support{% endblock %}
 
-{% block contents %}
+{% block css.extra %}{{block.super}}{% endblock css.extra %}
+{% block js.extra %}{{block.super}}{% endblock js.extra %}
+
+
+{% block content %}
 	<div id="support" class="span-24 last">
 		<h2>Support</h2>
 		

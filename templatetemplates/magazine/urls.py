@@ -7,8 +7,9 @@ from settings import MEDIA_ROOT
 urlpatterns = patterns('',
     
     # Example:
-    (r'^website/', include('website.urls')),
     (r'^assets/(?P<path>.*)$', 'django.views.static.serve', {'document_root': MEDIA_ROOT}),
+    (r'', include('website.urls')),
+
     # Uncomment the admin/doc line below to enable admin documentation:
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

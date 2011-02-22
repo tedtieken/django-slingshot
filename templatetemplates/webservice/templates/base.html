@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>{% block title %}Webservice Template{% endblock %}</title>
+
+		<!-- META TAGS -->
+		{% block meta %}
+        <meta http-equiv="content-type" content="{% block meta.content-type %}text/html;charset=UTF-8{% endblock meta.content-type %}" />
+        <meta name="description" content="{% block meta.description %}{% endblock meta.description %}" />
+        <meta name="keywords" content="{% block meta.keywords %}{% endblock meta.keywords %}" />
+        {% block meta.extra %}{% endblock meta.extra %}
+        {% endblock meta %}
+		
+        {% block css %}
+		<!-- CSS (BluePrint) -->		
+		<link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/screen.css" type="text/css" media="screen, projection">
+		<link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/print.css" type="text/css" media="print">
+		<!--[if lt IE 8]><link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+		<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/base.css" />
+        <!-- LOAD PAGE-SPECIFIC CSS -->
+        {% block css.extra %}{% endblock css.extra %}
+        {% endblock css %}        
+		
+
+		{% block js %}
+		<!-- JS (jQuery) -->
+		<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="{{ MEDIA_URL }}js/base.js"></script>
+		{% block js.extra %}{% endblock js.extra %}
+		{% endblock js %}
+		
+		{% block head.extra %}
+		{% endblock head.extra %}
+		
+	</head>
+
+    {% block body %}
+    <body>
+	    {% block header %}
+        {% block header.nav %}	    
+		<!-- NAVIGATION LINKS -->
+		<div id="navi">
+			<div class="container">
+				<div id="navi-left" class="span-18">
+					<a href="/" id="logo"><img /> WebsiteLogo</a>
+					<a href="/">Home</a>
+					<a href="/features">Features</a>
+					<a href="/learn">Learn</a>
+					<a href="/signup">Plans &amp; Pricing</a>
+					<a href="/faqs">FAQs</a>
+					<a href="/support">Support</a>
+				</div>
+				<div id="navi-right" class="span-6 last">
+					<a href="/signup">Sign Up</a>
+					<a href="/login">Login</a>
+				</div>
+			</div>
+		</div>
+        {% endblock header.nav %}
+        {% endblock header %}	
+		
+	    {% block canvas %}
+		<!-- CONTENTS -->
+		<div id="contents" class="container">
+                <div class="span-24 last" style="min-height: 400px;">
+                    {% block content %}<p>ERROR: No contents found for specified URL.</p>{% endblock content %}
+                </div>
+		</div>
+		{% endblock canvas %}
+
+        {% block footer %}		
+		<!-- FOOTER -->
+		<div id="footer">
+			<div class="container">
+				<div class="span-4">
+					<h6>Support</h6>
+					<ul>
+						<li><a href="#">Frequently Asked Questions</a></li>
+						<li><a href="#">Customer Service</a></li>
+						<li><a href="#">Community Forums</a></li>
+					</ul>
+				</div>
+				
+				<div class="span-4">
+					<h6>Company</h6>
+					<ul>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Office Hours</a></li>
+						<li><a href="#">Newsroom</a></li>
+						<li><a href="#">Careers</a></li>
+					</ul>
+				</div>
+				
+				<div class="span-4">
+					<h6>Legal</h6>
+					<ul>
+						<li><a href="#">Terms &amp; Conditions</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Security</a></li>
+					</ul>
+				</div>
+				
+				<div id="social-links" class="span-4 prepend-8 last">
+					<a href="#"><img src="{{ MEDIA_URL }}images/social_facebook.png" /></a>
+					<a href="#"><img src="{{ MEDIA_URL }}images/social_flickr.png" /></a>
+					<a href="#"><img src="{{ MEDIA_URL }}images/social_technorati.png" /></a>
+					<a href="#"><img src="{{ MEDIA_URL }}images/social_twitter_bird.png" /></a>
+				</div>	
+			</div>
+		</div>
+		{% endblock footer %}
+        <div id="slingshot">
+            <div class="container">
+                {% comment %}
+                You can change or remove the following link, subject to a few conditions.  Please read the license document that came with this package for more information.
+                {% endcomment %}
+                <a href="http://www.djangoslingshot.com">Design by DjangoSlingshot.com</a> 
+            </div>
+        </div>
+	</body>
+	{% endblock body %}		
+</html>

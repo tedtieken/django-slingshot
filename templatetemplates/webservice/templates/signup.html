@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}
-	Plans &amp; Pricing / Signup
-{% endblock %}
+{% block title %}{{block.super}} - Plans &amp; Pricing / Signup{% endblock %}
 
-{% block contents %}
+{% block css.extra %}{{block.super}}{% endblock css.extra %}
+{% block js.extra %}{{block.super}}{% endblock js.extra %}
+
+{% block content %}
 	
 	<div id="signup-form" class="span-24 last">
 		<h2>Select Your Plan</h2>

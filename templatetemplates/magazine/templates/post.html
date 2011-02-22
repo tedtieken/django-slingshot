@@ -7,6 +7,8 @@
 <link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}css/post.css" />
 {% endblock css.extra %}
 
+{% block js.extra %}{{block.super}}{% block js.extra %}
+
 {% block content %}
 <div class="span-16 last">
     <h1 class="post-title">Lorem Ipsum Dolor Sit Amet</h1>

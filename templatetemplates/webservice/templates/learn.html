@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}
-	Learn
-{% endblock %}
+{% block title %}{{block.super}} - Learn{% endblock %}
 
-{% block contents %}
+{% block css.extra %}{{block.super}}{% endblock css.extra %}
+{% block js.extra %}{{block.super}}{% endblock js.extra %}
+
+{% block content %}
 	<div id="learn" class="span-24 last">
 		<h2>Learn</h2>
 		

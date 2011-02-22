@@ -7,15 +7,8 @@
 <link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}css/index.css" />
 {% endblock css.extra %}
 
-{% block js.onready %}
-$('p.preview-text a').hide();
+{% block js.extra %}{{block.super}}{% endblock js.extra %}
 
-$('p.preview-text').hover(function(){
-    $(this).find('a').show();
-}, function(){
-    $(this).find('a').hide();
-});
-{% endblock js.onready %}
 
 {% block content %}
 <div class="span-16">
