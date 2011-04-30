@@ -19,9 +19,11 @@ def !!!VIEW_NAME!!!(request):
         if form.is_valid():
             if form.cleaned_data['confirm'] == "Yes":
                 #messages.success(request, 'You said Yes!')
+                pass
             else:
                 #messages.success(request, "You said No")
-            return HttpResponseRedirect(reverse('!!!URL_APP_TAG!!!:!!!URL_NAME!!!')
+                pass
+            return HttpResponseRedirect(reverse('!!!URL_APP_TAG!!!:!!!URL_NAME!!!'))
     else:
         form = ConfirmForm()    
 
