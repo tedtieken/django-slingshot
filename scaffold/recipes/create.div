@@ -46,30 +46,22 @@ class !!!FORM_NAME!!!(forms.ModelForm):
 To create a new !!!MODEL_NAME!!!, fill in the fields below and press submit.
 </div>
 <div>
-<form action="{% url !!!URL_APP_TAG!!!:!!!URL_NAME!!! %}" method="post">{% csrf_token %}
+  <form action="{% url !!!URL_APP_TAG!!!:!!!URL_NAME!!! %}" method="post">{% csrf_token %}
     {{form.non_field_errors}}
-    <table cellspacing="0"> 
-        {% for field in form %}
-        <tr {% if field.errors %}class = "error" {% endif %}>
-            <td>{{ field.label_tag }}</td>
-            <td id="td_for_{{field.name}}">
-                {{ field }}
-            </td>
-            <td><div class="help_text" id="help_text_{{field.name}}">{{field.help_text}}</div>
-                {% if field.errors %}
-                    <div class="error_wrapper">{{ field.errors }}</div> 
-                {% endif %}
-            </td>
-        </tr>        
-        {% endfor %}
-        <tr>
-            <td colspan="2" align="right">
-            <input type="submit" value="Submit" />
-            </td>
-            <td></td>
-        </tr>    
-    </table>
-</form>
+    {% for field in form %}
+    <div id="div_for_{{field.name}}" class="{% if field.errors %}error{% endif %}">
+        <h4>{{field.label_tag}}</h4>
+        {% if field.errors %}
+            <div class="error_wrapper">{{ field.errors }}</div> 
+        {% endif %}
+        <div class="help_text" id="help_text_{{field.name}}">{{field.help_text}}</div>
+        {{field}}            
+    </div>
+    {% endfor %}
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+  </form>
 <div>
 Links are here, uncomment them<br />
 {% comment %}
