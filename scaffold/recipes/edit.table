@@ -55,10 +55,11 @@ class !!!FORM_NAME!!!(forms.ModelForm):
  </div>
  <div>
   <form action="{% url !!!URL_APP_TAG!!!:!!!URL_NAME!!! !!!TEMPLATE_OBJECT_NAME!!!.id %}" method="post">{% csrf_token %}
+    <!-- {% cycle 'row2' 'row1' as rowcolors %} -->
     {{form.non_field_errors}}
     <table cellspacing="0"> 
     {% for field in form %}
-     <tr {% if field.errors %}class = "error" {% endif %}>
+     <tr class="{% cycle rowcolors %}{% if field.errors %} error{% endif %}">
       <td>{{ field.label_tag }}</td>
       <td id="td_for_{{field.name}}">
        {{ field }}

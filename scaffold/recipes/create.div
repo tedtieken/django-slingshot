@@ -47,10 +47,11 @@ To create a new !!!MODEL_NAME!!!, fill in the fields below and press submit.
 </div>
 <div>
   <form action="{% url !!!URL_APP_TAG!!!:!!!URL_NAME!!! %}" method="post">{% csrf_token %}
+    <!-- {% cycle 'row2' 'row1' as rowcolors %} -->
     {{form.non_field_errors}}
     {% for field in form %}
-    <div id="div_for_{{field.name}}" class="{% if field.errors %}error{% endif %}">
-        <h4>{{field.label_tag}}</h4>
+    <div id="div_for_{{field.name}}" class="{% cycle rowcolors %}{% if field.errors %} error{% endif %}">
+        {{field.label_tag}}
         {% if field.errors %}
             <div class="error_wrapper">{{ field.errors }}</div> 
         {% endif %}
